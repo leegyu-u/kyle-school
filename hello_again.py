@@ -1,6 +1,7 @@
 import datetime
 
-ct = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+seoul_timezone = timezone('Asia/Seoul')
+ct = datetime.datetime.now(seoul_timezone).strftime("%Y-%m-%d %H:%M:%S")
 
 print('hello again :)')
 print(f'it\'s {ct}')
