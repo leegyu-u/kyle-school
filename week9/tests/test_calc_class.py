@@ -19,41 +19,60 @@ def verify_answer(expected, answer, last_answer):
 def test_last_answer_init(calculator):
     # TODO : Test Code
 
-    assert calculator.last_answer == 0.0
+    last_answer = calculator.last_answer
+    expected = 0.0
 
-    answer = calculator.add(NUMBER_1, NUMBER_2)
-
-    assert calculator.last_answer == answer
+    verify_answer(expected, last_answer, last_answer)
 
 
 def test_add(calculator):
     # TODO: Use NUMBER_1, NUMBER_2을 사용해 Test
 
-    assert calculator.add(NUMBER_1, NUMBER_2) == 5.0
+    answer = calculator.add(NUMBER_1, NUMBER_2)
+    last_answer = calculator.last_answer
+    expected = 5.0
+
+    verify_answer(expected, answer, last_answer)
 
 
 def test_subtract(calculator):
     # TODO: Use NUMBER_1, NUMBER_2을 사용해 Test
 
-    assert calculator.subtract(NUMBER_1, NUMBER_2) == 1.0
+    answer = calculator.subtract(NUMBER_1, NUMBER_2)
+    last_answer = calculator.last_answer
+    expected = 1.0
+
+    verify_answer(expected, answer, last_answer)
 
 
 def test_subtract_negative(calculator):
     # TODO: Use NUMBER_1, NUMBER_2을 사용해 Test
 
-    assert calculator.subtract(NUMBER_2, NUMBER_1) == -1.0
+    answer = calculator.subtract(NUMBER_2, NUMBER_1)
+    last_answer = calculator.last_answer
+    expected = -1.0
+
+    verify_answer(expected, answer, last_answer)
 
 
 def test_multiply(calculator):
     # TODO: Use NUMBER_1, NUMBER_2을 사용해 Test
 
-    assert calculator.multiply(NUMBER_1, NUMBER_2) == 6.0
+    answer = calculator.multiply(NUMBER_1, NUMBER_2)
+    last_answer = calculator.last_answer
+    expected = 6.0
+
+    verify_answer(expected, answer, last_answer)
 
 
 def test_divide(calculator):
     # TODO: Use NUMBER_1, NUMBER_2을 사용해 Test
 
-    assert calculator.divide(NUMBER_1, NUMBER_2) == 1.5
+    answer = calculator.divide(NUMBER_1, NUMBER_2)
+    last_answer = calculator.last_answer
+    expected = 1.5
+
+    verify_answer(expected, answer, last_answer)
 
 
 def test_divide_by_zero(calculator):
@@ -80,4 +99,3 @@ def test_maximum(calculator, a, b, expected):
 def test_minimum(calculator, a, b, expected):
     # TODO : parametrize를 사용해 파라미터를 주입
     assert calculator.minimum(a, b) == expected
-
